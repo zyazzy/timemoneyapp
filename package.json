@@ -1,0 +1,11 @@
+{
+  "name": "askme",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "meteor-node-stubs": "~0.2.0",
+    "random.js": "^0.1.0"
+  }
+}

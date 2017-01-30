@@ -1,0 +1,118 @@
+.header-top {background-color:#1f2021;}
+header, .sf-menu ul {background-color:#ee5845;}
+body {background-color:#f3f3f4;}
+.content-container, #home-page-content .content-container:hover {background-color:#ffffff; border-bottom:2px solid #e5e5e6;}
+.content-container:hover {border-bottom-color:#ee5845;}
+body .advertisement-bayside:hover {border-bottom:2px solid #e5e5e6;}
+body a.progression-blue, body input.button, .pagination a.selected, .pagination a:hover, .wpcf7 input.wpcf7-submit, #respond input#submit, .load-more-manual #page-nav a {background:#4b83b0; color:#ffffff;}
+.header-top a {color:#4b83b0;}
+.header-top a:hover {color:#dddddd;}
+body a.progression-blue:hover, body input.button:hover, .wpcf7 input.wpcf7-submit:hover, #respond input#submit:hover, .load-more-manual #page-nav a:hover {background:#4f8ec1; }
+body, .progression-etabs a {color:#777777;}
+.sf-menu a, .sf-menu a:hover, .sf-menu a:visited  {color:#ffffff;}
+a {color:#4b83b0;}
+a:hover, #sidebar a:hover h6 {color:#4b83b0;}
+h1 {color:#2e2f32;}
+h2, h3, h4, h5, h6 {color:#424347;}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {color:#424347;}
+#sidebar h5 {color:#d2d3d3;}
+body #logo img {max-width:40px;}
+.sf-menu a {padding-top:28px; padding-bottom:30px;} 
+body .sf-menu li:hover ul, body .sf-menu li.sfHover ul {top:74px;} 
+.header-top, .sf-menu, .meta-data-index, .media-overlay, #sidebar h5, #sidebar .time-stamp-sidebar, #sidebar  .progression-tab a, h6.bayside-category {font-family: 'Titillium Web', sans-serif; }
+h1, h2, h3, h4, h5, h6, a#jtwt_date, .pagination a, a.progression-button, input.button, .wpcf7 input.wpcf7-submit, ul.progression-toggle li, .progression-etabs, #respond input#submit, .load-more-manual #page-nav a {font-family: 'PT Sans', sans-serif; }
+body {font-family:"Helvetica Neue", Helvetica, Arial, Sans-Serif;}
+.col2 { width:275px; }
+#page-content, #full-width {background:#ffffff; border-right:2px solid #e7e7e9; border-bottom:2px solid #e7e7e9; }
+
+a.likes {
+	    background: #fff !important;
+    font-size: 20px !important;
+}
+.glyphicon-thumbs-up{
+	position: relative !important;
+	top: 5px !important;
+	margin-right: 5px;
+}
+
+.meta-data-index a:hover, .meta-data-index a:focus{
+	text-decoration: none !important;
+}
+.flags{font-size:18px;}
+.col2{margin: 0 8px;}
+.filter_answers{margin: 20px 0;width: 90%;
+    text-align: center;}
+.filter_answers .input-group, .filter_answers .button{margin: 5px;}
+#answer{    min-height: 150px;
+    background: #e7e7e9;
+    border: 1px dotted #e7e7e9;
+}
+.question{font-size: 22px;
+    text-align: center;}
+#tags{background: #e7e7e9;
+    border: 1px dotted #e7e7e9;}
+#add-answer{background: #4b83b0;
+    color: #fff;}
+.has-error .form-control{border-color: #a94442 !important; background:#FFF7F7 !important;}
+#sidebar{width: 285px !important; height: 100%;}
+#money{display:none;}
+
+.recent-posts a{
+	margin-left: 15px;
+    font-size: 14px;
+}
+.recent-posts a:hover{
+	text-decoration: none;
+}
+.recent-posts a:focus{
+	    font-weight: bold;
+		text-decoration: none;
+}
+.recent-posts i{
+	    margin-right: 5px;
+}
+.not-show{display: none;}
+.activ{opacity: 1 !important;}
+	#not-found{    width: 200px;
+    margin: 0 auto;
+    top: 50px;
+    position: relative;}
+	
+@media (min-width: 320px){
+	#sidebar{
+		height: inherit !important;
+		width: 100% !important;
+	}
+	.col2 {
+		width: 92% !important;
+	}
+}
+@media (max-width: 780px) {
+	#sidebar{
+		height: inherit !important;
+		width: 100% !important;
+	}
+	.col2 {
+		width: 92% !important;
+	}
+}
+@media (min-width: 781px) {
+	#sidebar{
+		height: 100% !important;
+		width: 295px !important;
+	}
+	.col2 {
+		width: 275px !important;
+	}
+}
+
+.answer_tags{
+	font-style: italic;
+    padding: 4px !important;
+    opacity: 0.6;
+    float: left;
+    margin: 2px 3px;
+    border: 1px dotted #949292;
+    border-radius: 4px;
+}
+.meta-data-index{ clear: both !important;}

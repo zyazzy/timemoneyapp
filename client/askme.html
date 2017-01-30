@@ -1,0 +1,171 @@
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width">
+	<title>Askme</title>
+	<link rel='stylesheet' id='responsive-css'  href='http://yff6b0cib9ixima2.zippykid.netdna-cdn.com/wp-content/themes/bayside/css/responsive.css?ver=4.5.2' type='text/css' media='all' />
+	<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans%3A700%7CTitillium+Web%3A400%2C700&#038;ver=4.5.2' type='text/css' media='all' />
+</head>
+
+<body class="home page page-id-21 page-template page-template-homepage page-template-homepage-php"></body>
+<template name="content">
+	<div id="main" class="site-main">
+		<div id="sidebar">
+			{{> yield "nav"}}
+		</div>
+		
+		{{> yield "question"}}
+		{{> yield "answers"}}
+		<div class="clearfix"></div>
+	</div>
+</template>
+
+<template name="notfound">
+	<div id = "not-found">
+		<h1>404</h1>
+		<p>Page not found</p>
+	</div>
+</template>
+
+
+<template name = "nav">
+	<div class="sidebar-icon"><a href="#" class="sidebar-icon-link"></a></div>
+	<div class="sidebar-spacer search-base-spacer"></div>	
+	<div id="sidebar-widgets">
+		<div id="lat-pop-widget-2" class="widget lat-pop">			
+			<div class="progression-tab-container">
+				<ul class="progression-etabs">
+					<li class="progression-tab"><a href="#" class="time-title activ">TIME</a></li>
+					<li class="progression-tab"><a href="#" class="money-title">MONEY</a></li>
+					<li class="progression-tab"><a href="/" class="home-title">HOME</a></li>
+				</ul>
+				<div id="time">
+					<ul class="recent-posts">
+						{{#each get_time}}
+							<li><a href="/posts/{{link}}"><i class="glyphicon glyphicon-time"></i>{{value}}</a></li>
+						{{/each}}
+					</ul>
+				</div>
+				<div id="money">
+					<ul class="recent-posts">
+						{{#each get_money}}
+							<li><a href="/posts/{{link}}"><i class="glyphicon glyphicon-usd"></i>{{value}}</a></li>
+						{{/each}}
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="sidebar-spacer"></div>
+		<div class="sidebar-spacer"></div>
+		<div class="sidebar-spacer"></div>		
+	</div>
+</template>
+
+<template name = "answers">
+	<section id="content">
+			{{#if showButtons}}
+				<div id="mason-layout" class="transitions-enabled fluid">
+						<form class="form-inline filter_answers">
+							<div class="form-group">
+								<label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+								<div class="input-group">
+									<div class="input-group-addon glyphicon glyphicon-flag"></div>
+									<select class="form-control" id = "f_country">
+										<option value = "">Group by country</option>
+										{{#each getCountriesList}}
+											<option value = "{{country}}">{{country}}</option>
+										{{/each}}
+									</select>
+								</div>
+								<label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+								<div class="input-group">
+									<div class="input-group-addon glyphicon glyphicon-user"></div>
+									<select class="form-control" id = "f_sex">
+										<option value = "">Group by sex</option>
+										<option value = "male">male</option>
+										<option value = "female">female</option>
+									</select>
+								</div>
+								<button type="submit" class="btn btn-primary" id = "f_recent">Most recent</button>
+								<button type="submit" class="btn btn-primary" id = "f_liked">Most liked</button>
+							</div>
+						</form>
+						{{#each answers_list}}
+							<div class="boxed-mason col2">
+								<div class="content-container ">
+									<div class="featured-media">
+										<div class="gradient-overlay"></div>
+									</div>
+									<div class="featured-summary">
+										<h4>If you have {{type}}, what would you do?</h4>
+										<p>{{answer}}</p>
+
+										<ul class="list-group">
+											{{#if tags}}
+												{{#each tags}}
+													<li class="list-group-item answer_tags">{{tag}}</li>
+												{{/each}}
+											{{/if}}
+										</ul>
+										
+										<div class="meta-data-index">
+											<span class="time-posted-mini"><a href="#" class = "likes" data-id = "{{id}}"><i class="glyphicon glyphicon-thumbs-up"></i>{{likes}}</a></span>
+											<span class="time-posted-mini flags"><i class="glyphicon glyphicon-flag"></i>{{country}}</span>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+						{{/each}}
+					<div class="clearfix"></div>
+				</div>
+				<div class="load-more-manual">	
+					<nav id='page-nav'><a href='#' class="load_more hide">Load more...</a></nav>
+				</div>
+				<div class="clearfix"></div>
+			{{/if}}
+		</section> 
+</template>
+
+<template name = "question">
+	<section id="content">
+		<div id="mason-layout" class="transitions-enabled fluid">
+			<div class="container m-top">		
+				<form class="form-horizontal">
+					<p class = "question">If you have {{random}}, what would you do?</p>
+					<div class="form-group" data-type = "answer">
+						<div class="col-sm-12">
+							<textarea class="form-control" placeholder="Your answer" id = "answer" name="answer"></textarea>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-12">
+							<input type="text" class="form-control" id="tags" name="tags" placeholder="Tags">
+							<small class="text-muted">You can write 1 or more tags (separate by space)</small>
+						</div>
+					</div>
+					<div class="form-group"  data-type = "sex">
+						<div class="col-sm-12">
+							<div class="radio">
+								<label>
+									<input type="radio" name="sex" value = "male"> Male
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="sex" value = "female"> Female
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-12">
+						<button type="submit" class="btn btn-default" id = "add-answer">Add answer</button>
+						</div>
+					</div>
+				</form>		
+			</div>
+		</div>
+	</section>
+</template>
